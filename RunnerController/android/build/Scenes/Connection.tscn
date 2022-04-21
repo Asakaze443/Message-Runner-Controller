@@ -1,0 +1,142 @@
+[gd_scene load_steps=7 format=2]
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Assets/font/Kurland.otf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://Assets/font/Kurland.otf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://Assets/font/Kurland.otf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 30
+font_data = SubResource( 8 )
+
+[node name="Connection" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.329412, 0.329412, 0.329412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -202.0
+margin_top = -190.0
+margin_right = 196.0
+margin_bottom = 193.0
+color = Color( 0.388235, 0.372549, 0.309804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="Control"]
+margin_left = 322.0
+margin_top = 143.0
+margin_right = 695.0
+margin_bottom = 212.0
+size_flags_horizontal = 7
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 5 )
+text = "Connect To PC
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="debugText" type="Label" parent="Control"]
+margin_left = 322.0
+margin_top = 178.0
+margin_right = 695.0
+margin_bottom = 247.0
+size_flags_horizontal = 7
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 5 )
+text = " "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="emailTextEdit" type="TextEdit" parent="Control"]
+margin_left = 323.0
+margin_top = 260.0
+margin_right = 696.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+custom_fonts/font = SubResource( 7 )
+text = "Email"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="passwordTextEdit" type="TextEdit" parent="Control"]
+margin_left = 323.0
+margin_top = 320.0
+margin_right = 696.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+custom_fonts/font = SubResource( 7 )
+text = "Password"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConnectBtn" type="Button" parent="Control"]
+margin_left = 451.0
+margin_top = 393.0
+margin_right = 568.0
+margin_bottom = 432.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 9 )
+text = "Confirm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="notification" type="Label" parent="Control"]
+margin_left = 323.0
+margin_top = 451.0
+margin_right = 695.0
+margin_bottom = 465.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

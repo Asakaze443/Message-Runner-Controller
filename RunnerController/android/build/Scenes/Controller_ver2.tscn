@@ -1,0 +1,542 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Scripts/WSClient.gd" type="Script" id=1]
+[ext_resource path="res://Assets/RButton.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UpButtonPressed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/RButtonPressed.png" type="Texture" id=4]
+[ext_resource path="res://Assets/LButtonPressed.png" type="Texture" id=5]
+[ext_resource path="res://Assets/LButton.png" type="Texture" id=6]
+[ext_resource path="res://Assets/font/Kurland.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://Scripts/Controller.gd" type="Script" id=8]
+[ext_resource path="res://Assets/UpButton.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/SensitivitySB.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/font/Kurland.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 32
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.2, 0.2, 0.2, 1 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 30
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 35
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 32
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.2, 0.2, 0.2, 1 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 30
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.2, 0.2, 0.2, 1 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 32
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.2, 0.2, 0.2, 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 30
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 25
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Assets/font/Kurland.otf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 23
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://Assets/font/Kurland.otf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://Assets/font/Kurland.otf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 30
+font_data = SubResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.2, 0.2, 0.2, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 1
+
+[node name="Controller" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": true,
+"_edit_vertical_guides_": [ 516.0 ]
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.067
+margin_bottom = 12.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="ServerIP" type="LineEdit" parent="MarginContainer/HBoxContainer"]
+margin_right = 508.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = " IP: "
+align = 1
+editable = false
+
+[node name="Status" type="LineEdit" parent="MarginContainer/HBoxContainer"]
+margin_left = 516.0
+margin_right = 1024.0
+margin_bottom = 53.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = " Status: "
+align = 1
+editable = false
+
+[node name="LandscapeControls" type="HBoxContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnL" type="Control" parent="LandscapeControls"]
+margin_right = 508.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="TS_LBtn" type="TouchScreenButton" parent="LandscapeControls/BtnL"]
+position = Vector2( 56, 215 )
+scale = Vector2( 0.3, 0.3 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 5 )
+
+[node name="TS_UpBtn" type="TouchScreenButton" parent="LandscapeControls/BtnL"]
+position = Vector2( 198, 348 )
+scale = Vector2( 0.252, 0.252 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 3 )
+
+[node name="BtnR" type="Control" parent="LandscapeControls"]
+margin_left = 516.0
+margin_right = 1024.0
+margin_bottom = 600.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+
+[node name="TS_DownBtn" type="TouchScreenButton" parent="LandscapeControls/BtnR"]
+position = Vector2( 321, 476 )
+rotation = 3.14159
+scale = Vector2( 0.252, 0.252 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 3 )
+
+[node name="TS_RBtn" type="TouchScreenButton" parent="LandscapeControls/BtnR"]
+position = Vector2( 321, 215 )
+scale = Vector2( 0.3, 0.3 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 4 )
+
+[node name="PortraitControls" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnL" type="Control" parent="PortraitControls"]
+margin_right = 447.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TS_LBtn" type="TouchScreenButton" parent="PortraitControls/BtnL"]
+position = Vector2( 450, 506 )
+rotation = -1.5708
+scale = Vector2( 0.3, 0.3 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 5 )
+
+[node name="TS_UpBtn" type="TouchScreenButton" parent="PortraitControls/BtnL"]
+position = Vector2( 303, 370 )
+rotation = -1.5708
+scale = Vector2( 0.3, 0.3 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 3 )
+
+[node name="Reset_Btn2" type="Button" parent="PortraitControls/BtnL"]
+margin_left = 47.0
+margin_top = 416.0
+margin_right = 155.0
+margin_bottom = 469.0
+rect_rotation = -90.0
+custom_fonts/font = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
+text = "  Reset  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnR" type="Control" parent="PortraitControls"]
+margin_left = 516.0
+margin_right = 1026.0
+margin_bottom = 600.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TS_DownBtn" type="TouchScreenButton" parent="PortraitControls/BtnR"]
+position = Vector2( 234, 215 )
+rotation = 1.5708
+scale = Vector2( 0.3, 0.3 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 3 )
+
+[node name="TS_RBtn" type="TouchScreenButton" parent="PortraitControls/BtnR"]
+position = Vector2( -66, 245 )
+rotation = -1.5708
+scale = Vector2( 0.3, 0.3 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 4 )
+
+[node name="Steps2" type="LinkButton" parent="PortraitControls"]
+margin_left = 941.0
+margin_top = 317.0
+margin_right = 1010.0
+margin_bottom = 350.0
+rect_rotation = -90.0
+custom_fonts/font = SubResource( 20 )
+button_mask = 0
+enabled_focus_mode = 0
+text = "Steps"
+underline = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitBtn2" type="Button" parent="PortraitControls"]
+margin_right = 47.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 12 )
+text = "X"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToLandscape" type="Button" parent="PortraitControls"]
+margin_left = 47.0
+margin_top = 272.0
+margin_right = 158.0
+margin_bottom = 325.0
+rect_rotation = -90.0
+custom_fonts/font = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
+text = "Return"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LandscapeUI" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToPortrait" type="Button" parent="LandscapeUI"]
+margin_left = 435.0
+margin_top = 272.0
+margin_right = 596.0
+margin_bottom = 317.0
+custom_fonts/font = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+text = "To Portrait"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reset_Btn" type="Button" parent="LandscapeUI"]
+margin_left = 418.0
+margin_top = 530.0
+margin_right = 609.0
+margin_bottom = 576.0
+custom_fonts/font = SubResource( 23 )
+custom_styles/normal = SubResource( 24 )
+text = "Reset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitBtn" type="Button" parent="LandscapeUI"]
+margin_left = 975.0
+margin_right = 1022.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 12 )
+text = "X"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Steps" type="LinkButton" parent="LandscapeUI"]
+anchor_left = 0.5
+anchor_top = 0.843
+anchor_right = 0.5
+anchor_bottom = 0.843
+margin_left = 468.0
+margin_top = 442.28
+margin_right = 531.0
+margin_bottom = 472.28
+button_mask = 0
+enabled_focus_mode = 0
+text = "Steps"
+underline = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameNameLE" type="LineEdit" parent="LandscapeUI"]
+margin_left = 394.0
+margin_top = 78.0
+margin_right = 630.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 13 )
+text = "Message Runner"
+align = 1
+editable = false
+expand_to_text_length = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SensitivitySB" type="SpinBox" parent="LandscapeUI"]
+margin_left = 409.0
+margin_top = 143.0
+margin_right = 621.0
+margin_bottom = 196.0
+value = 10.0
+align = 2
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sensitivityLabel" type="RichTextLabel" parent="LandscapeUI/SensitivitySB"]
+margin_left = 9.0
+margin_top = 12.0
+margin_right = 127.0
+margin_bottom = 41.0
+custom_fonts/normal_font = SubResource( 14 )
+text = "Sensitivity:"
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Connection" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Connection"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.329412, 0.329412, 0.329412, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Control" type="Control" parent="Connection"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Connection/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 323.0
+margin_top = 23.0
+margin_right = -303.0
+margin_bottom = -314.0
+color = Color( 0.388235, 0.372549, 0.309804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="Connection/Control/ColorRect2"]
+anchor_left = 0.239
+anchor_top = 0.078
+anchor_right = 0.719
+anchor_bottom = 0.266
+margin_left = -0.121994
+margin_top = -10.514
+margin_right = -0.161987
+margin_bottom = -28.958
+size_flags_horizontal = 7
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 5 )
+text = "Connect To PC"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="debugText" type="Label" parent="Connection/Control/ColorRect2"]
+anchor_left = 0.033
+anchor_top = 0.209
+anchor_right = 0.967
+anchor_bottom = 0.352
+margin_left = -1.134
+margin_top = -13.967
+margin_right = 1.134
+margin_bottom = 0.424004
+size_flags_horizontal = 7
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 5 )
+text = " "
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IPLE" type="LineEdit" parent="Connection/Control/ColorRect2"]
+anchor_left = 0.033
+anchor_top = 0.411
+anchor_right = 0.967
+anchor_bottom = 0.612
+margin_left = -0.134
+margin_top = -0.0930023
+margin_right = 0.133972
+margin_bottom = 0.0439911
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+custom_fonts/font = SubResource( 7 )
+text = "192.168.0.195"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConnectBtn" type="Button" parent="Connection/Control/ColorRect2"]
+anchor_left = 0.319
+anchor_top = 0.73
+anchor_right = 0.643
+anchor_bottom = 0.901
+margin_left = 0.0379944
+margin_top = 0.00999451
+margin_right = 0.0859985
+margin_bottom = 0.0369873
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 17 )
+text = "Confirm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="notification" type="Label" parent="Connection/Control"]
+margin_left = 336.0
+margin_top = 364.0
+margin_right = 708.0
+margin_bottom = 389.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WSClient" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="LandscapeControls/BtnL/TS_LBtn" to="." method="_on_TS_LBtn_pressed"]
+[connection signal="released" from="LandscapeControls/BtnL/TS_LBtn" to="." method="_on_TS_LBtn_released"]
+[connection signal="pressed" from="LandscapeControls/BtnL/TS_UpBtn" to="." method="_on_TS_UpBtn_pressed"]
+[connection signal="released" from="LandscapeControls/BtnL/TS_UpBtn" to="." method="_on_TS_UpBtn_released"]
+[connection signal="pressed" from="LandscapeControls/BtnR/TS_DownBtn" to="." method="_on_TS_DownBtn_pressed"]
+[connection signal="released" from="LandscapeControls/BtnR/TS_DownBtn" to="." method="_on_TS_DownBtn_released"]
+[connection signal="pressed" from="LandscapeControls/BtnR/TS_RBtn" to="." method="_on_TS_RBtn_pressed"]
+[connection signal="released" from="LandscapeControls/BtnR/TS_RBtn" to="." method="_on_TS_RBtn_released"]
+[connection signal="pressed" from="PortraitControls/BtnL/TS_LBtn" to="." method="_on_TS_LBtn_pressed"]
+[connection signal="released" from="PortraitControls/BtnL/TS_LBtn" to="." method="_on_TS_LBtn_released"]
+[connection signal="pressed" from="PortraitControls/BtnL/TS_UpBtn" to="." method="_on_TS_UpBtn_pressed"]
+[connection signal="released" from="PortraitControls/BtnL/TS_UpBtn" to="." method="_on_TS_UpBtn_released"]
+[connection signal="pressed" from="PortraitControls/BtnL/Reset_Btn2" to="." method="_on_Reset_Btn_pressed"]
+[connection signal="pressed" from="PortraitControls/BtnR/TS_DownBtn" to="." method="_on_TS_DownBtn_pressed"]
+[connection signal="released" from="PortraitControls/BtnR/TS_DownBtn" to="." method="_on_TS_DownBtn_released"]
+[connection signal="pressed" from="PortraitControls/BtnR/TS_RBtn" to="." method="_on_TS_RBtn_pressed"]
+[connection signal="released" from="PortraitControls/BtnR/TS_RBtn" to="." method="_on_TS_RBtn_released"]
+[connection signal="pressed" from="PortraitControls/ExitBtn2" to="." method="_on_ExitBtn_pressed"]
+[connection signal="pressed" from="PortraitControls/ToLandscape" to="." method="_on_ToLandscape_pressed"]
+[connection signal="pressed" from="LandscapeUI/ToPortrait" to="." method="_on_ToPortrait_pressed"]
+[connection signal="pressed" from="LandscapeUI/Reset_Btn" to="." method="_on_Reset_Btn_pressed"]
+[connection signal="pressed" from="LandscapeUI/ExitBtn" to="." method="_on_ExitBtn_pressed"]
+[connection signal="pressed" from="Connection/Control/ColorRect2/ConnectBtn" to="." method="_on_ConnectBtn_pressed"]
+[connection signal="connected" from="WSClient" to="." method="_on_WSClient_connected"]
+[connection signal="disconnected" from="WSClient" to="." method="_on_WSClient_disconnected"]
